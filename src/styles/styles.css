@@ -1,0 +1,28 @@
+/* Global Variables */
+
+:root{
+  --main-blue: rgba(135, 206, 250);
+  --main-black: rgba(0, 0, 0);
+  --main-navy: rgba(0, 0, 128);
+  --main-white: rgba(255, 255, 255);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Helvetca';
+  -webkit-font-smoothing: antialiased;
+  background: var(--main-blue);
+  color: #000;
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+
+/******************************************************************/
+/*******                LOGIN PAGE                       **********/
