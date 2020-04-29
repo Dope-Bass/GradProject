@@ -4,22 +4,30 @@ import Icon from 'react-icons-kit'
 import {arrow_right} from 'react-icons-kit/ikons/arrow_right'
 import {arrow_left} from 'react-icons-kit/ikons/arrow_left'
 import CalendarDay from './dayView'
+import axios from 'axios';
 
 class Calendar extends Component {
     constructor() {
         super()
         this.state = {
 
+            projects: [],
+
             today: new Date(),
             current: new Date()
 
         }    
-        this.days = this.countDays(this.state.current);    
+        this.days = this.countDays(this.state.current);  
     }
 
-    // componentDidMount = () => {
-    //     this.days = this.countDays(this.state.current);
-    // }
+    componentDidMount() {
+        axios.get('http://127.0.0.1:8000/api/projects/')
+            .then(res => {
+                this.setState({
+                    projects: res.data
+                })
+            })
+    }
 
     countDays = (current) => {
         let new_date = new Date(current.getFullYear(), current.getMonth(), 1);
@@ -73,7 +81,7 @@ class Calendar extends Component {
     render() {
 
         let days = this.days;
-
+        
         return (
             <View>
                 <div className='header'>
@@ -91,7 +99,7 @@ class Calendar extends Component {
                     {
                         days.map(day => (
                                 <div className='smth'>
-                                    <CalendarDay key={day} day={day} month={this.state.current.getMonth()} year={this.state.current.getFullYear()}/>
+                                    <CalendarDay projects={this.state.projects} key={day} day={day} month={this.state.current.getMonth()} year={this.state.current.getFullYear()}/>
                                 </div>
                             )
                         )

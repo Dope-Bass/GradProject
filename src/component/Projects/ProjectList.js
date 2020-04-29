@@ -15,7 +15,6 @@ import Slide from '@material-ui/core/Slide';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
-import MaterialUIPickers from './datePicker'
 import Icon from 'react-icons-kit'
 import MenuItem from '@material-ui/core/MenuItem';
 
