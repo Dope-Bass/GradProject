@@ -86,7 +86,12 @@ const Page = styled.div`
         margin-top: 10rem;
         border: 3px solid black;
         border-radius: 1rem;
-        height: 20rem;
+        height: 5rem;
+        text-align: center;
+        &:hover {
+            border-radius: 1%;
+            background: #d3d3d3;
+        }
     }
 
 `
