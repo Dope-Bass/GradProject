@@ -37,13 +37,13 @@ const CalendarDay = ({projects, day, month, year, ...props}) =>  {
             const start_date = projects[i].start_date.split('-');
             const check_date = projects[i].check_date.split('-');
             const end_date = projects[i].end_date.split('-');
-            if (new Date(start_date[0], start_date[1]-1, start_date[2]).valueOf() === new Date(year, month, day).valueOf()) {
+            if (new Date(start_date[0], start_date[1], start_date[2]).valueOf() === new Date(year, month, day).valueOf()) {
                 events.push('' + START + '   ' + projects[i].title);
             }
-            if (new Date(check_date[0], check_date[1]-1, check_date[2]).valueOf() === new Date(year, month, day).valueOf()) {
+            if (new Date(check_date[0], check_date[1], check_date[2]).valueOf() === new Date(year, month, day).valueOf()) {
                 events.push('' + CHECK + '   ' + projects[i].title);
             }
-            if (new Date(end_date[0], end_date[1]-1, end_date[2]).valueOf() === new Date(year, month, day).valueOf()) {
+            if (new Date(end_date[0], end_date[1], end_date[2]).valueOf() === new Date(year, month, day).valueOf()) {
                 events.push('' + FINISH + '   ' + projects[i].title);
             }
         } else {
