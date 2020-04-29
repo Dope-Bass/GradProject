@@ -3,15 +3,19 @@ import React from 'react';
 import styled from 'styled-components'
 
 const CalendarDay = ({day, month, year, ...props}) =>  {
+
+    let today = new Date();
+    let curDay = today.getDate();
+    let curMonth = today.getMonth();
+    let curYear = today.getFullYear();
         
     return (
         <Element>
             <div className='day'>
-                <div className='square'>
+                <div className='square' style={new Date(curYear, curMonth, curDay).valueOf() === new Date(year, month, day).valueOf() ? {background: 'yellow'} : {background: 'white'}}>
                     {day}
                     <p>{Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(new Date(year, month, day))}</p>
                 </div>
-                
             </div>
         </Element>
     )
