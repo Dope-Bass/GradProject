@@ -4,15 +4,13 @@ import styled from 'styled-components'
 
 const CalendarDay = ({day, month, year, ...props}) =>  {
 
-    let today = new Date();
-    let curDay = today.getDate();
-    let curMonth = today.getMonth();
-    let curYear = today.getFullYear();
+    const today = new Date();
         
     return (
         <Element>
             <div className='day'>
-                <div className='square' style={new Date(curYear, curMonth, curDay).valueOf() === new Date(year, month, day).valueOf() ? {background: 'yellow'} : {background: 'white'}}>
+                <div className='square' style={new Date(today.getFullYear(), today.getMonth(), today.getDate()).valueOf() === new Date(year, month, day).valueOf() 
+                    ? {background: 'yellow'} : {background: 'white'}}>
                     {day}
                     <p>{Intl.DateTimeFormat('en-US', {weekday: 'long'}).format(new Date(year, month, day))}</p>
                 </div>
