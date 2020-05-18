@@ -255,6 +255,13 @@ class MailList extends Component {
                 <View>
                     <div className='info-container'>
                         <h1 className='title'>{this.state.displaying.title}</h1>
+                        {
+                            this.state.displaying.title === '#share' ? 
+                            <div>
+                                <h3 className='title'>Запрос на присоединение к проекту от {this.state.displaying.sender}</h3> 
+                                <Button className='admit-btn' variant='contained' color='primary'>Admit</Button>
+                            </div> : ''
+                        }
                     </div>
                 </View>
             </SplitPane>
@@ -351,6 +358,12 @@ const View = styled.div`
         margin-right: 10rem;
         border: 3px solid black;
         background: #fff;
+    }
+
+    .admit-btn {
+        background: #2ecc71;
+        margin-left: 21rem;
+        margin-top: 5rem;
     }
 
     .title {

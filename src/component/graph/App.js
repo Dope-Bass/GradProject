@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { Line, Chart } from 'react-chartjs-2';
 import styled from 'styled-components'
 
+
 export default class App extends Component {
 
     render() {
+
         return(
             <Graphs>
                 <br />
@@ -19,7 +21,7 @@ export default class App extends Component {
                         }}
                         data={this.state.data}
                     /> */}
-                    {/* <canvas id="mybarChart" width="800" height="450"></canvas> */}
+                    {/* <canvas id="bar-chart" width="800" height="450"></canvas> */}
                 </div>
             </Graphs>
         )
